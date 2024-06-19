@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/montyz/DSA/linkedlist",
-      "program": "/Users/montyz/DSA/linkedlist/build/Debug/outDebug"
+      "cwd": "/Users/montyz/DSA/DSAgit/linkedlist",
+      "program": "/Users/montyz/DSA/DSAgit/linkedlist/build/Debug/outDebug"
     }
   ]
 }

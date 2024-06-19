@@ -17,7 +17,7 @@ class Node {
         next = nullptr;
     }
 };
-
+//convert arr to LL
 Node* convertArr2LL(vector<int> &arr){
     Node* head = new Node(arr[0]);
     Node* mover = head;
@@ -27,6 +27,28 @@ Node* convertArr2LL(vector<int> &arr){
         mover = temp;
     }
     return head;
+}
+
+//find length of LL
+
+int findlengthofLL(Node* head){
+    int cnt = 0;
+    Node* temp = head;
+    while(temp){
+        temp = temp->next;
+        cnt++;
+    }
+    return cnt;
+}
+
+//search in LL
+int searchgg(Node* head,int val){
+    Node* temp = head;
+    while(temp){
+        if(temp->data == val) return 1;
+        temp = temp->next;
+    }
+    return 0;
 }
 
 
@@ -41,17 +63,23 @@ int main()
     // cout<<head->data;
 
     //traversing in LL
-    Node* temp = head;
-    while(temp){
-        cout<<temp->data<<" ";
-        temp = temp->next;
-    }
+    // Node* temp = head;
+    // while(temp){
+    //     cout<<temp->data<<" ";
+    //     temp = temp->next;
+    // }
 
     //this also works
     // while(head){
     //     cout<<head->data<<" ";
     //     head = head->next;
     // }
+
+    //call length function
+    // cout<<findlengthofLL(head);
     
+    //call search function
+    cout<<searchgg(head,20);
+
     return 0;
 }
