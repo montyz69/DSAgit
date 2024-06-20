@@ -144,6 +144,40 @@ Node* insertattail(Node* head,int val){
     return head;
 }
 
+Node* insertatKthelement(Node* head,int val,int K){
+    if(head == NULL){
+        if(K==1) return new Node(val);
+    }
+    if(K==1) return new Node(val,head);
+    Node* temp = head;
+    int cnt = 0;
+    while (temp){
+        cnt++;
+        if(cnt == K-1){
+            Node* n = new Node(val);
+            n->next = temp->next;
+            temp->next = n;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+
+Node* insertBeforeValue(Node* head,int element,int val){
+    if(head == NULL) return NULL;
+    if(head->data == val) return new Node(element,head);
+    Node* temp = head;
+    while (temp->next != NULL){
+        if(temp->next->data == val){
+            Node* n = new Node(element,temp->next);
+            temp->next = n;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
 
 int main()
 {
@@ -200,6 +234,14 @@ int main()
 
     //call insert at tail function
     // head = insertattail(head,0);
+    // printLL(head);
+
+    //call insert at Kth element function
+    // head = insertatKthelement(head,0,3);
+    // printLL(head);
+
+    //call insert Before value function
+    // head = insertBeforeValue(head,0,40);
     // printLL(head);
 
 
